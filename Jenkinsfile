@@ -10,10 +10,7 @@ pipeline {
                 sh "mvn package"
             }
         }
-        stage('manual approval') {
-            steps {
-                input "Do you want to deploy to staging environment ?"
-            }
+       
         }
         stage('deploy') {
             steps {
