@@ -10,9 +10,7 @@ pipeline {
                 sh "mvn package"
             }
         }
-       
-        }
-        stage('deploy') {
+          stage('deploy') {
             steps {
                 sh "cp target/JenkinsWar.war /var/lib/tomcat9/webapps/"
             }
