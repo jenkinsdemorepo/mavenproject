@@ -10,12 +10,7 @@ pipeline {
                 sh "mvn package"
             }
         }
-        stage('manual approval') {
-            steps {
-                input "Do you want to deploy to staging environment ?"
-            }
-        }
-        stage('deploy') {
+          stage('deploy') {
             steps {
                 sh "cp target/JenkinsWar.war /var/lib/tomcat9/webapps/"
             }
